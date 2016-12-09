@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_relative"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#424242"
+    android:orientation="vertical"
+    tools:context="com.example.android.reliefgumpv1.MainActivity">
+
+    <TextView
+        android:id="@+id/duration_text"
+        style="@style/number_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Duration"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/duration"
+        style="@style/number_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/duration_text"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:text="00:00:00" />
+
+    <View
+        android:id="@+id/firstline"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/duration"
+        android:background="#9E9E9E"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"/>
+
+    <TextView
+        android:id="@+id/distance_text"
+        style="@style/number_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/firstline"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Distance(km)"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/distance"
+        style="@style/number_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/distance_text"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:text="0.0" />
+
+    <View
+        android:id="@+id/secondline"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/distance"
+        android:background="#9E9E9E"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"/>
+
+    <TextView
+        android:id="@+id/product_text"
+        style="@style/number_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/secondline"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Impact(₹)"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/impact_text"
+        style="@style/number_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/product_text"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:text="0.00" />
+
+    <View
+        android:id="@+id/thirdline"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/impact_text"
+        android:background="#9E9E9E"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"/>
+
+    <LinearLayout
+        android:id="@+id/fragment_container_linear"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/thirdline"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+
+    <ViewFlipper
+        android:id="@+id/first_viewflipper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:autoStart="false">
+
+        <LinearLayout
+            android:id="@+id/first_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/start_button"
+                style="@style/button_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00E676"
+                android:text="Start"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/second_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ViewFlipper
+                android:id="@+id/second_viewflipper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/pause_button"
+                    style="@style/button_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/pause"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:text=" Pause" />
+
+                <Button
+                    android:id="@+id/resume_button"
+                    style="@style/button_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/resume"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:text=" Resume" />
+            </ViewFlipper>
+
+            <Button
+                android:id="@+id/stop_button"
+                style="@style/button_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/stop"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:background="#E57373"
+                android:text=" Stop"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+
+    </ViewFlipper>
+
+</RelativeLayout>
