@@ -9,4 +9,4 @@ and visualizes it on the google maps fragment
 `git clone` the project and build the project on android studio.
 
 ### Going Beyond
-This app is part of a big project which aims at building a platform for virtualizing sponsored runs powered by just an app.
+This app is part of a bigger initiative which aims at building a platform for raising money for charity via virtualized sponsored runs powered just by an app.
